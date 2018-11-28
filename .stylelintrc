@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    scss/at-import-partial-extension-blacklist: ['.scss', '.css'],
+    order/properties-alphabetical-order: null
+  }
+}

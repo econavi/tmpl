@@ -1,0 +1,59 @@
+// Миксин для подключения
+@mixin fontFace($path, $name, $weight: normal, $style: normal) {
+	@font-face {
+    font-family: ' + $name + ';
+		src: local(' + $name + '),
+				url('../assets/fonts/' + $path + '/' + $name + '.woff2') format('woff2'),
+				url('../assets/fonts/' + $path + '/' + $name + '.woff') format('woff'),
+				url('../assets/fonts/' + $path + '/' + $name + '.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+  }
+}
+
+
+// Миксин для назначения
+@mixin fontFamily($name) {
+  font-family: '' + $name + '', sans-serif;
+}
+
+
+// Подключение шрифтов
+@include fontFace(montserrat, montserrat-regular, 400)
+@include fontFace(montserrat, montserrat-italic, 400, italic)
+
+@include fontFace(montserrat, montserrat-semibold, 600)
+@include fontFace(montserrat, montserrat-semibolditalic, 600, italic)
+
+@include fontFace(montserrat, montserrat-bold, 700)
+@include fontFace(montserrat, montserrat-bolditalic, 700, italic)
+
+
+/***********************************
+
+	Начертание шрифтов:
+
+	100 - Thin (тонкое начертание)
+	200 - Extra-Light (сверхсветлое)
+	300 - Light (светлое)
+	400 - Regular (нормальное)
+	500 - Medium (среднее)
+	600 - Semi-Bold (полужирное)
+	700 - Bold (жирное)
+	800 - Extra-Bold (сверхжирное)
+	900 - Black (тяжёлое)
+
+	Пример подключения:
+
+	@font-face
+		font-family 'RobotoCondensedBold'
+		src url('../assets/fonts/RobotoCondensed/RobotoCondensedBold.woff2') format('woff2'),
+				url('../assets/fonts/RobotoCondensed/RobotoCondensedBold.woff') format('woff'),
+				url('../assets/fonts/RobotoCondensed/RobotoCondensedBold.ttf') format('truetype')
+		font-weight 700
+		font-style normal
+		font-display swap
+
+
+***********************************/

@@ -1,0 +1,126 @@
+@mixin clearfix() {
+  zoom: 1;
+
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// обрезка текста с многоточием
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// доступно скрыть элемент
+@mixin visualli-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// обнулить стили списка <ul>
+@mixin list-reset() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*-----------------------------------------*/
+
+/* Safari mobile */
+
+// плавная прокрутка в Safari mobile
+@mixin smooth-scroll() {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// отменяет подсветку при тапе по активным элементам в Safari mobile
+@mixin not-tap-color() {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// отключает масштабирование текста в горизонтальной ориентации
+@mixin text-size-adjust($val: none){
+  -webkit-text-size-adjust: $val;
+  -moz-text-size-adjust: $val;
+  -ms-text-size-adjust: $val;
+}
+
+/*-----------------------------------------*/
+
+/* Media */
+
+// not-touchscreen devices
+@mixin media-not-touch() {
+  @media (hover), (min-width: 0\0) , (min--moz-device-pixel-ratio: 0) {
+    @content;
+  }
+}
+
+// touchscreen devices only
+@mixin media-touch() {
+  @media only screen and (pointer:coarse) {
+    @content;
+  }
+}
+
+@mixin media($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+/*-----------------------------------------*/
+
+/* Debugers */
+
+@mixin x($color: #f00) {
+  outline: 2px solid lighten($color, 20%);
+  outline-offset: -2px;
+}
+
+@mixin xx($color: #f00) {
+  background: rgba($color, 0.2);
+}
+
+@mixin xxx($color: #f00) {
+  outline: 2px solid lighten($color, 20%);
+  outline-offset: -2px;
+  background: rgba($color, 0.2);
+}
+
+
+/* --------------------------------------------
+
+    Изменение велечены текста в приделах заданных размеров, относительно viewport экрана.
+
+    Используется формула Mike Riethmuller:
+    font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+    Пример:
+    font-size calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 320)))
+
+    https://madebymike.com.au/writing/fluid-type-calc-examples/
+    https://webformyself.com/zhidkaya-tipografika/
+
+  */
+
+@mixin setResponsiveFont($smallFont, $bigFont, $smallViewport, $bigViewport) {
+  font-size: calc(#{$smallFont}px + (#{$bigFont} - #{$smallFont}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
+}
+
+/* -------------------------------------------- */
