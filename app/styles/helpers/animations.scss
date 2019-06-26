@@ -1,0 +1,26 @@
+$duration: 2s;
+$timing: ease;
+
+@keyframes fadeOut {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@mixin fadeOut() {
+  animation-name: 'fadeOut';
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-fill-mode: forwards;
+}
+
+@mixin fadeIn() {
+  animation-name: 'fadeIn';
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-fill-mode: forwards;
+}

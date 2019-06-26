@@ -12,13 +12,6 @@
   }
 }
 
-// обрезка текста с многоточием
-@mixin text-ellipsis() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 // доступно скрыть элемент
 @mixin visualli-hidden() {
   position: absolute;
@@ -38,8 +31,14 @@
   list-style: none;
 }
 
-/*-----------------------------------------*/
+// обрезать строку текста с многоточием
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
+/*-----------------------------------------*/
 /* Safari mobile */
 
 // плавная прокрутка в Safari mobile
@@ -61,12 +60,11 @@
 }
 
 /*-----------------------------------------*/
-
 /* Media */
 
 // not-touchscreen devices
 @mixin media-not-touch() {
-  @media (hover), (min-width: 0\0) , (min--moz-device-pixel-ratio: 0) {
+  @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio: 0) {
     @content;
   }
 }
@@ -85,7 +83,6 @@
 }
 
 /*-----------------------------------------*/
-
 /* Debugers */
 
 @mixin x($color: #f00) {
@@ -103,9 +100,21 @@
   background: rgba($color, 0.2);
 }
 
+/*-----------------------------------------*/
+// FONTS
 
-/* --------------------------------------------
+// обрезка текста с многоточием
+@mixin text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
+// Резиновый размер шрифта
+@mixin setResponsiveFont($smallFont, $bigFont, $smallViewport, $bigViewport) {
+  font-size: calc(#{$smallFont}px + (#{$bigFont} - #{$smallFont}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
+}
+/*
     Изменение велечены текста в приделах заданных размеров, относительно viewport экрана.
 
     Используется формула Mike Riethmuller:
@@ -118,9 +127,5 @@
     https://webformyself.com/zhidkaya-tipografika/
 
   */
-
-@mixin setResponsiveFont($smallFont, $bigFont, $smallViewport, $bigViewport) {
-  font-size: calc(#{$smallFont}px + (#{$bigFont} - #{$smallFont}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
-}
 
 /* -------------------------------------------- */
