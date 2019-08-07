@@ -1,0 +1,38 @@
+head
+  block head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+  title= pageTitle || ''
+  meta(name='description' content=pageDescription || '')
+
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='imagetoolbar' content='no')
+  meta(name='msthemecompatible' content='no')
+  meta(name='cleartype' content='on')
+  meta(name='HandheldFriendly' content='True')
+
+  //- HTML5 Shiv
+  <!--[if lt IE 9]>
+  script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js")
+  <![endif]-->
+
+  meta(name='apple-mobile-web-app-capable' content='yes')
+  meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+
+  meta(name='format-detection' content='telephone=no')
+  meta(name='format-detection' content='address=no')
+
+  meta(name='application-name' content=pageTitle || '')
+  meta(name='msapplication-tooltip' content=pageDescription || '')
+
+  //- https://realfavicongenerator.net
+  link(rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png")
+  link(rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png")
+  link(rel="manifest" href="/assets/img/favicons/manifest.json")
+  link(rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5")
+  link(rel="shortcut icon" href="/assets/img/favicons/favicon.ico")
+  meta(name="msapplication-config" content="/assets/img/favicons/browserconfig.xml")
+  meta(name="theme-color" content="#ffffff")
+
+  link(href="/styles/build.min.css" rel="stylesheet")

@@ -1,4 +1,11 @@
 mixin icon(name, mod)
   - mod = mod || ''
   svg(class="svg-icon icon-" + name + ' ' + mod)
-    use(xlink:href= path + "assets/img/sprite.svg#" + name)
+    use(xlink:href="/assets/img/sprite.svg#" + name)
+
+//- Использование:
+//- section
+//-   +icon('fb', 'icon-fb')
+//-   +icon('tw', 'icon-tw')
+//-   +icon('vk', 'icon-vk')
+//-   +icon('ig', 'icon-ig')

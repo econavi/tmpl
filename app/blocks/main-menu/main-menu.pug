@@ -1,27 +1,23 @@
 -
-	var list = [
+  var list = [
 
-		{	name: 'Главная',
-			url: '/'
-		},
+    {  name: 'Главная',
+      url: '/'
+    },
 
-		{	name: 'Раздел первого уровня',
-			url: '/lev1/'
-		},
+    {  name: 'Контакты',
+      url: '/pages/contacts.html'
+    }
 
-		{	name: 'Раздел второго уровня',
-			url: '/lev1/lev2/'
-		}
-
-	];
+  ];
 
 
 mixin navItem(url, name)
-	li.main-menu__item
-		a.main-menu__link(href=url)= name
+  li.main-menu__item
+    a.main-menu__link(href=url)= name
 
 
 nav.main-menu
-	ul.main-menu__list
-		each i in list
-			+navItem(i.url, i.name)
+  ul.main-menu__list
+    each i in list
+      +navItem(i.url, i.name)

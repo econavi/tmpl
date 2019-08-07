@@ -1,0 +1,13 @@
+extends ../templates/default.pug
+
+block head
+  - var pageTitle = 'Раздел первого уровня';
+  - var pageDescription = 'Описание раздела первого уровня';
+
+block content
+  header.page__header
+    include ../../blocks/header/header.pug
+  main.page__content
+    h1 Контакты
+  footer.page__footer
+    include ../../blocks/footer/footer.pug

@@ -1,4 +1,4 @@
-extends ../templates/default/template.pug
+extends templates/default.pug
 
 block head
   - var path = '';
@@ -6,4 +6,9 @@ block head
   - var pageDescription = 'Описание главной страницы';
 
 block content
+  header.page__header
+    include ../blocks/header/header.pug
   main.page__content
+    h1 Главная
+  footer.page__footer
+    include ../blocks/footer/footer.pug
