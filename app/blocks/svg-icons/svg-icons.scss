@@ -1,20 +1,26 @@
 .svg-icon {
   display: inline-block;
   fill: currentColor;
+  width: 2em;
+  height: 2em;
 }
 
-.icon-fb {
+.fb-icon {
   fill: blue;
 }
 
-.icon-tw {
+.tw-icon {
   fill: orange;
 }
 
-.icon-vk {
+.vk-icon {
   fill: lime;
 }
 
-.icon-ig {
+.ig-icon {
   fill: gold;
+}
+
+.lang-toggle-icon {
+  fill: black;
 }
