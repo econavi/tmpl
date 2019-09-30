@@ -1,0 +1,32 @@
+$columns: 12;
+$atom: (100% / $columns);
+
+$gutter: $grid-gutter-default;
+$gutter-half: $gutter / 2;
+// $mb-items: $gutter;
+
+@mixin grid-row(){
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: ($gutter-half * -1);
+  margin-right: ($gutter-half * -1);
+}
+
+@mixin grid-col() {
+  width: 100%;
+  margin-left: $gutter-half;
+  margin-right: $gutter-half;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+@mixin grid-col-size($n){
+  $val: 100% / $columns * $n;
+  width: #{calc(#{$val} - #{$gutter})};
+  // margin-bottom: $mb-items;
+}
+
+@mixin grid-col-double-size($n){
+  $val: 100% / $columns * ($n * 2);
+  width: #{calc(#{$val} - #{$gutter})};
+}
