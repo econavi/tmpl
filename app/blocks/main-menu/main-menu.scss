@@ -1,8 +1,8 @@
 .main-menu {
-  text-align: center;
+  text-align: left;
 
   &__list {
-    @include list-reset();
+    @include listReset();
   }
 
   &__link.is-active {

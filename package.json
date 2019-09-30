@@ -1,6 +1,6 @@
 {
   "name": "project-template",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Шаблон проекта для frontend разработки. Сборка на Gulp + Webpack",
   "license": "ISC",
   "scripts": {

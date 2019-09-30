@@ -1,12 +1,47 @@
 .page {
-  display: flex;
+  display: flex; // For IE11
   flex-direction: column;
-
+  max-width: $page-width;
+  margin: 0 auto;
+  
+  &__inner {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__main-nav {
+    // position: absolute;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  &__hero-main {
+    padding-top: 8.4em;
+    background: image-url('header-main-bg.jpg') no-repeat center;
+    background-size: cover;
+    
+    @include media($laptop) {
+      padding-top: 21.3vh;
+    }
+  }
+  
+  &__header {
+    padding-top: 6.3em;
+  }
+  
   &__content {
     flex-grow: 1;
   }
-
+  
   &__footer {
     flex-shrink: 0;
+    padding-bottom: 2em;
+    background: image-url('footer-bg-yellow-trash.png') no-repeat;
+    background-position: right bottom;
+    background-size: contain;
   }
 }

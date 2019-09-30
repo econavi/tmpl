@@ -1,18 +1,58 @@
-// TRANSITION
+// ------------------------------------------------------
+// COMMON
+$page-width: 1440px;
+$page-margins-x: 161px;
+$content-padding-x: 15px;
+$content-max-width: $page-width - ($page-margins-x * 2);
+$grid-gutter-default: 3.8%;
 
-$transition-default: 0.3s;
+// ------------------------------------------------------
+// Z-INDEX
+$main-menu_z-index: 8000;
+$main-menu-switcher_z-index: 9000;
 
-/*-------------------------------------*/
+// ------------------------------------------------------
+// ANIMATION
+$opacity-hover-default: 0.6;
+$opacity-active-default: 1;
+$transition-default: 0.2s;
 
+// ------------------------------------------------------
 // COLORS
-
+$white: #FFFFFF;
 $black: #000000;
+$blue: #0098ED;
+$red: #CC0000;
+$yellow: #FAFF00;
+$green: #9BC53D;
+$green-light: #4CAF50;
+$green-deep: #009933;
+$orange: #FF7C06;
+$gray: #999999;
+$gray-light: #FBFBFB;
 
-/*-------------------------------------*/
+// state
+$color-danger:    $red; // цвет ошибки, опасного действия
+$color-success:   $green-deep; // цвет подтверждения, удачного завершения операции
+$color-warning:   #D8AE1C; // цвет информационного сообщения
 
-// FONTS
+// text
+$text-color-black: $black;
+$text-color-white: $white;
+$text-color-gray: $gray;
+$text-color-green: $green;
+$text-color-blue: $blue;
 
+// buttons
+$button-color-black: $black;
 
+// other
+$color-blockquote-bg: $gray-light;
+$color-footer-bg: $gray-light;
+$color-active-link-menu: $green-light;
+$color-link-default: $blue;
+
+$shdow-default: 30px 30px 0px rgba(0, 0, 0, 0.05);
 
 // ------------------------------------------------------
 // FONTS
@@ -20,15 +60,44 @@ $font-default: 'Montserrat';
 $font-second: 'Montserrat';
 $font-third: 'Montserrat';
 
-/*-------------------------------------*/
+// fonts-size
+$font-size-xxxs: 12px;
+$font-size-xxs: 14px;
+$font-size-xs: 18px;
+$font-size-s: 21px;
+$font-size-m: 24px;
+$font-size-l: 28px;
+$font-size-x: 32px;
+$font-size-xl: 40px;
+$font-size-xxl: 64px;
+$font-size-xxxl: 72px;
 
+// fonts-size-default
+$font-size-default-min: 14px;
+$font-size-default-max: 24px;
+
+$headers-default-font-size-min: 32px;
+$headers-default-font-size-max: 72px;
+
+// LINE-HEIGHT
+$default-line-height: 1.2;
+$headers-default-line-height: 1.4;
+
+
+// ------------------------------------------------------
+// FORM
+$placeholder-font-size: $font-size-xs;
+
+
+// ------------------------------------------------------
 // MEDIA QUERIES
+$phone:      320px;
+$smartphone: 400px;
+$tablet:     768px;
+$laptop:     1024px;
+$desktop:    1280px;
+$tv:         1440px;
 
-$phone   : 320px;
-$tablet  : 768px;
-$laptop  : 1024px;
-$desktop : 1280px;
-$tv      : 1600px;
+$mobile-menu: 970px;
 
 
-/*-------------------------------------*/

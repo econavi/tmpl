@@ -6,9 +6,11 @@ block head
   - var pageDescription = 'Описание главной страницы';
 
 block content
-  header.page__header
-    include ../blocks/header/header.pug
-  main.page__content
-    h1 Главная
-  footer.page__footer
-    include ../blocks/footer/footer.pug
+  body.page
+    .page__inner.content-container
+      header.page__main-nav
+        include ../blocks/main-nav/main-nav.pug
+      main.page__content
+        h1 Главная страница
+      footer.page__footer
+        include ../blocks/footer/footer.pug

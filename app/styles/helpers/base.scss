@@ -2,28 +2,21 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: inherit;
+  outline: none;
 }
 
-html {
-  position: relative;
-
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-
-	font-size: 10px;
-}
-
+html,
 body {
+  position: relative;
   width: 100%;
-  height: 100%;
   min-height: 100%;
   padding: 0;
+  margin: 0;
 
   @include fontFamily($font-default);
-  font-size: 1.6rem;
+  @include fontSizeDefault();
   font-weight: 400;
+  line-height: $default-line-height;
 
   @include smooth-scroll();
   @include text-size-adjust(none);
@@ -34,19 +27,45 @@ img {
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6,
-b, strong {
-  @include fontFamily($font-default);
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.52em; 
+  @include fontFamily($font-second); 
+  @include setFontFluid($headers-default-font-size-min, $headers-default-font-size-max);  
   font-weight: 700;
+  line-height: $headers-default-line-height;
 }
 
-i, em {
-  @include fontFamily($font-default);
-  font-style: italic;
+p {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+input {
+  overflow: visible;    // Покажем торчащее в Edge
+  text-transform: none; // Уберём наследование text transform в Firefox
+  
+  &::-ms-clear { // убить кресты на инпутах в IE
+    display: none;
+  }
+  &::-ms-reveal { // убить кресты на инпутах для ввода пароля в IE
+    display: none;
+  }
+}
+
+input[type=number] {
+  // Убирает стрелк в поле input, type number
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none; /* <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
 }
 
 input[placeholder] {
   text-overflow: ellipsis;
+  font-size: $placeholder-font-size;
 }
 
 input:focus::placeholder {
@@ -57,6 +76,14 @@ textarea {
   resize: vertical;
 }
 
+textarea::placeholder {
+  font-size: $placeholder-font-size;
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -65,4 +92,19 @@ table td,
 table th {
   padding: 10px;
   padding-right: 30px;
+}
+
+a {
+  color: $color-link-default;
+  transition: opacity $transition-default;
+
+  @include media-not-touch() {
+    &:hover {
+      opacity: $opacity-hover-default;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
 }

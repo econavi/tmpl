@@ -25,10 +25,18 @@
 }
 
 // обнулить стили списка <ul>
-@mixin list-reset() {
+@mixin listReset() {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+// обнулить стили button
+@mixin buttonReset() {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 // обрезать строку текста с многоточием
@@ -76,8 +84,36 @@
   }
 }
 
+// retina (2x)
+@mixin media-retina2x() {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// retina desktop (2x)
+@mixin media-retina2x-min($media) {
+  @media (min-width: $media) and (-webkit-min-device-pixel-ratio: 2),
+    (min-width: $media) and (min-resolution: 192dpi) {
+      @content;
+  }
+}
+
+
 @mixin media($media) {
   @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-max($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-min-max($mediaMin, $mediaMax) {
+  @media only screen and (min-width: $mediaMin) and (max-width: $mediaMax) {
     @content;
   }
 }
@@ -111,21 +147,30 @@
 }
 
 // Резиновый размер шрифта
-@mixin setResponsiveFont($smallFont, $bigFont, $smallViewport, $bigViewport) {
-  font-size: calc(#{$smallFont}px + (#{$bigFont} - #{$smallFont}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }
-/*
-    Изменение велечены текста в приделах заданных размеров, относительно viewport экрана.
 
-    Используется формула Mike Riethmuller:
-    font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+@mixin fluidFontSize($smallFont, $bigFont, $smallViewport, $bigViewport) {
 
-    Пример:
-    font-size calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 320)))
+  $smallFont: strip-unit($smallFont);
+  $bigFont: strip-unit($bigFont);
+  $smallViewport: strip-unit($smallViewport);
+  $bigViewport: strip-unit($bigViewport);
 
-    https://madebymike.com.au/writing/fluid-type-calc-examples/
-    https://webformyself.com/zhidkaya-tipografika/
+  font-size: $smallFont + px;
 
-  */
+  @media (min-width: $smallViewport + px) {
+    font-size: calc(#{$smallFont}px + (#{$bigFont} - #{$smallFont}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
+  }
 
+  @media (min-width: $bigViewport + px) {
+    font-size: $bigFont + px;
+  }
+}
 /* -------------------------------------------- */
