@@ -36,11 +36,13 @@ img {
 
 h1, h2, h3, h4, h5, h6,
 b, strong {
-  @include fontFamily($font-default-semibold);
+  @include fontFamily($font-default);
+  font-weight: 700;
 }
 
 i, em {
-  @include fontFamily($font-default-italic);
+  @include fontFamily($font-default);
+  font-style: italic;
 }
 
 input[placeholder] {
