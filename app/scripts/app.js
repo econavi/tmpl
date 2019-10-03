@@ -3,6 +3,8 @@ import mainMenu from '../blocks/main-menu/main-menu';
 
 class Viewer {
   constructor() {
+    this.mainMenu = mainMenu;
+    this.svg4everybody = svg4everybody;
     this.init();
   }
 
@@ -11,12 +13,13 @@ class Viewer {
   }
 
   initClasses() {
-    svg4everybody();
-    mainMenu();
+    this.svg4everybody();
+    this.mainMenu();
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // eslint-disable-next-line no-new
   new Viewer();
 });
 
