@@ -3,14 +3,28 @@
   @font-face {
     font-family: '#{$name}';
     src: local('#{$name}'),
-        font-url('#{$path}.woff2') format('woff2'),
-        font-url('#{$path}.woff') format('woff'),
-        font-url('#{$path}.ttf') format('truetype');
+      url('/assets/fonts/#{$name}/#{$path}.woff2') format('woff2'),
+      url('/assets/fonts/#{$name}/#{$path}.woff') format('woff'),
+      url('/assets/fonts/#{$name}/#{$path}.ttf') format('truetype');
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
   }
 }
+
+// Только для Ruby on Rails
+// @mixin fontFace($name, $path, $weight: normal, $style: normal) {
+//   @font-face {
+//     font-family: '#{$name}';
+//     src: local('#{$name}'),
+//         font-url('#{$path}.woff2') format('woff2'),
+//         font-url('#{$path}.woff') format('woff'),
+//         font-url('#{$path}.ttf') format('truetype');
+//     font-weight: $weight;
+//     font-style: $style;
+//     font-display: swap;
+//   }
+// }
 
 // Миксин для назначения
 @mixin fontFamily($name) {
