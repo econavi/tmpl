@@ -16,6 +16,16 @@
   );
 };
 
+@mixin setPropFluid($prop, $minSize, $maxSize) {
+  @include fluidSizeProp(
+    $prop,
+    $minSize,
+    $maxSize,
+    $phone,
+    $tv
+  );
+};
+
 @mixin hoverDefault() {
   @include media-not-touch() {
     opacity: $opacity-hover-default;

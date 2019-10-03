@@ -173,4 +173,22 @@
     font-size: $bigFont + px;
   }
 }
+
+// Задает резинвым любое свойство в пикселях
+@mixin fluidSizeProp($property, $smallSize, $bigSize, $smallViewport, $bigViewport) {
+  $smallSize: strip-unit($smallSize);
+  $bigSize: strip-unit($bigSize);
+  $smallViewport: strip-unit($smallViewport);
+  $bigViewport: strip-unit($bigViewport);
+  
+  #{$property}: $smallSize + px;
+
+  @media (min-width: $smallViewport + px) {
+    #{$property}: calc(#{$smallSize}px + (#{$bigSize} - #{$smallSize}) * ((100vw - #{$smallViewport}px) / (#{$bigViewport} - #{$smallViewport})))
+  }
+
+  @media (min-width: $bigViewport + px) {
+    #{$property}: $bigSize + px;
+  }
+}
 /* -------------------------------------------- */
