@@ -27,13 +27,19 @@
 };
 
 @mixin hoverDefault() {
-  @include media-not-touch() {
-    opacity: $opacity-hover-default;
+  &:hover {
+    @include media-not-touch() {
+      opacity: $opacity-hover-default;
+      @content;
+    }
   }
 };
 
 @mixin activeDefault() {
-  @include media-not-touch() {
-    opacity: $opacity-active-default;
+  &:active {
+    @include media-not-touch() {
+      opacity: $opacity-active-default;
+      @content;
+    }
   }
 };

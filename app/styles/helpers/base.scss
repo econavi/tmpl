@@ -96,15 +96,12 @@ table th {
 
 a {
   color: $color-link-default;
-  transition: opacity $transition-default;
+  transition: $transition-default;
+}
 
-  @include media-not-touch() {
-    &:hover {
-      opacity: $opacity-hover-default;
-    }
-
-    &:active {
-      opacity: 1;
-    }
-  }
+a,
+button,
+select {
+  @include hoverDefault();
+  @include activeDefault();
 }
