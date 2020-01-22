@@ -1,4 +1,12 @@
+include ../burger/burger.pug
+include ../main-menu/main-menu.pug
+
 mixin mainNav()
-  .main-nav
-    +mainLogo()
-    include ../main-menu/main-menu.pug
+  nav.main-nav
+    .main-nav__inner.content-container
+      a.main-nav__logo(href="/")
+        +mainLogo()
+      .main-nav__menu.js-main-menu
+        +mainMenu()
+      .main-nav__menu-switcher.js-main-menu-switcher
+        +burger()

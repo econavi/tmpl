@@ -1,23 +1,6 @@
--
-  var list = [
-
-    {  name: 'Главная',
-      url: '/'
-    },
-
-    {  name: 'Контакты',
-      url: '/pages/contacts.html'
-    }
-
-  ];
-
-
-mixin navItem(url, name)
-  li.main-menu__item
-    a.main-menu__link(href=url)= name
-
-
-nav.main-menu
-  ul.main-menu__list
-    each i in list
-      +navItem(i.url, i.name)
+mixin mainMenu()
+  ul.main-menu()
+    li.main-menu__item
+      a.main-menu__link(href="/") Главная
+    li.main-menu__item
+      a.main-menu__link(href="./ui-kit.html") UI-KIT

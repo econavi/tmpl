@@ -1,0 +1,64 @@
+.accordion {
+  $main-padding: 15px;
+  background: white;
+
+  &__header {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: $main-padding;
+    padding-right: 48px;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    transition: $transition-default;
+
+    &:hover {
+      opacity: $opacity-hover-default;
+    }
+
+    // Arrow icon
+    &::before {
+      $size-icon: 8px;
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      width: $size-icon;
+      height: $size-icon;
+      border: 2px solid lightslategray;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      transform: translateY(-75%) rotate(135deg);
+    }
+  }
+
+  &__body {
+    height: 0;
+    overflow: hidden;
+    transition: $transition-default;
+  }
+
+  &__content {
+    padding: $main-padding;
+    padding-top: 5px;
+  }
+}
+
+.accordion.is-open {
+  .accordion__header {
+    &::before {
+      transform: translateY(-25%) rotate(-45deg);
+    }
+  }
+}
+
+html.no-js {
+  .accordion {
+    .accordion__body {
+      height: auto;
+    }
+  }
+}

@@ -1,12 +1,56 @@
 .main-menu {
-  text-align: left;
+  $link-margin-x: 16px;
+  $link-font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-  &__list {
-    @include listReset();
+  @include media($mobile-menu) {
+    flex-direction: row;
   }
 
-  &__link.is-active {
-    color: green;
-    font-weight: 700;
+  &__item {
+    @include media($mobile-menu) {
+      &:nth-of-type(1n + 2) {
+        margin-left: $link-margin-x;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 3% 0;
+    text-align: center;
+    text-decoration: underline;
+    color: $text-color-gray;
+    white-space: nowrap;
+
+    @include fontFamily($font-third);
+    font-weight: 900;
+    font-size: $link-font-size;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    @include hoverDefault();
+
+    @include media($mobile-menu) {
+      display: inline-block;
+      padding: 0;
+      color: $text-color-gray;
+    }
+
+    &.is-active {
+      color: $text-color-gray;
+      text-decoration: none;
+      cursor: default;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
+
+

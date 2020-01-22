@@ -1,29 +1,16 @@
+
 import svg4everybody from 'svg4everybody';
+import uiKitInit from '../ui-kit/js';
+
+import mainNav from '../blocks/main-nav/main-nav';
 import mainMenu from '../blocks/main-menu/main-menu';
-
-class Viewer {
-  constructor() {
-    this.mainMenu = mainMenu;
-    this.svg4everybody = svg4everybody;
-    this.init();
-  }
-
-  init() {
-    this.initClasses();
-  }
-
-  initClasses() {
-    this.svg4everybody();
-    this.mainMenu();
-  }
-}
+import burger from '../blocks/burger/burger';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // eslint-disable-next-line no-new
-  new Viewer();
-});
+  svg4everybody();
+  uiKitInit();
 
-// window.onload = () => {
-//   svg4everybody();
-//   mainMenu();
-// };
+  mainNav();
+  mainMenu();
+  burger();
+});

@@ -1,0 +1,55 @@
+@import 'sources';
+
+$color-icon-vk: #0071BC;
+$color-icon-fb: #0C47B7;
+$color-icon-tw: #29ABE2;
+$color-icon-yt: #FF1D25;
+$color-icon-in: #ED1E79;
+
+.social-links {
+  display: flex;
+
+  &__item {
+    width:29px;
+    height:29px;
+    background-color: #d3f1ff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 52%;
+    border-radius: 50%;
+    transition: opacity $transition-default;
+
+    &:nth-of-type(1n + 2) {
+      margin-left: 12px;
+    }
+
+    &:hover { opacity: $opacity-hover-default }
+    &:active { opacity: $opacity-active-default }
+
+    &.icon-vk {
+      background-color: $color-icon-vk;
+      background-image: url($icon-vk-source);
+    }
+
+    &.icon-fb {
+      background-color: $color-icon-fb;
+      background-image: url($icon-fb-source);
+      background-size: 29%;
+    }
+
+    &.icon-tw {
+      background-color: $color-icon-tw;
+      background-image: url($icon-tw-source);
+    }
+
+    &.icon-yt {
+      background-color: $color-icon-yt;
+      background-image: url($icon-yt-source);
+    }
+
+    &.icon-in {
+      background-color: $color-icon-in;
+      background-image: url($icon-in-source);
+    }
+  }
+}

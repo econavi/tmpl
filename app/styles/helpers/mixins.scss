@@ -33,6 +33,7 @@
 
 // обнулить стили button
 @mixin buttonReset() {
+  padding: 0;
   background: none;
   border: none;
   color: inherit;
@@ -45,6 +46,30 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+// Сделать стрелку 
+@mixin makeArrow($size: 25px, $color: black, $direction: right) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border: 2px solid $color;
+  border-bottom: none;
+  border-left: none;
+  
+  @if $direction == down {
+    transform: rotate(135deg);
+  } @else if $direction == left {
+    transform: rotate(225deg);
+  } @else if $direction == up {
+    transform: rotate(315deg);
+  } @else if $direction == right {
+    transform: rotate(45deg);
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+
+  @content;
+};
 
 /*-----------------------------------------*/
 /* Safari mobile */

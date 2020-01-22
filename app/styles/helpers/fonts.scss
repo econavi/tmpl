@@ -32,12 +32,12 @@
 }
 
 // Подключение шрифтов
-@include fontFace('Montserrat', 'montserrat-regular', 400);
-@include fontFace('Montserrat', 'montserrat-italic', 400, italic);
-@include fontFace('Montserrat', 'montserrat-semibold', 600);
-@include fontFace('Montserrat', 'montserrat-semibolditalic', 600, italic);
-@include fontFace('Montserrat', 'montserrat-bold', 700);
-@include fontFace('Montserrat', 'montserrat-bolditalic', 700, italic);
+@include fontFace('montserrat', 'montserrat-regular', 400);
+@include fontFace('montserrat', 'montserrat-italic', 400, italic);
+@include fontFace('montserrat', 'montserrat-semibold', 600);
+@include fontFace('montserrat', 'montserrat-semibolditalic', 600, italic);
+@include fontFace('montserrat', 'montserrat-bold', 700);
+@include fontFace('montserrat', 'montserrat-bolditalic', 700, italic);
 
 // Начертание шрифтов:
 // 

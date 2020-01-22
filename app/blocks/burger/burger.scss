@@ -1,6 +1,7 @@
-$burger-size: 20px;
+$burger-size: 18px;
 $burger-height-shapes: 2px;
-$burger-color: $black;
+$burger-color-white: $white;
+$burger-color-dark: $gray;
 
 .burger {
   position: relative;
@@ -11,13 +12,15 @@ $burger-color: $black;
   border: none;
   background: none;
   outline: none;
+  cursor: pointer;
+  @include hoverDefault();
 
   &__icon {
     position: absolute;
-    right: 0;
+    right: 2px;
     left: 0;
     height: $burger-height-shapes;
-    background: $burger-color;
+    background: $burger-color-dark;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -29,7 +32,7 @@ $burger-color: $black;
     right: 0;
     left: 0;
     height: $burger-height-shapes;
-    background: $burger-color;
+    background: $burger-color-dark;
     transition: transform $transition-default;
   }
 
@@ -50,11 +53,27 @@ $burger-color: $black;
   &::before {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
+    background: $burger-color-white;
   }
 
   &::after {
     top: 50%;
     bottom: auto;
     transform: translateY(-50%) rotate(-45deg);
+    background: $burger-color-white;
+  }
+}
+
+
+.burger--color-white {
+  &.burger {
+    &::before,
+    &::after {
+      background: $burger-color-white;
+    }
+  }
+
+  .burger__icon {
+    background: $burger-color-white;
   }
 }

@@ -1,0 +1,13 @@
+extends templates/layout.pug
+
+block head
+  - var path = '';
+  - var pageTitle = 'UI-KIT';
+  - var pageDescription = 'Готовые компоненты для верстки UI-KIT';
+
+prepend body
+  - var bodyClass = '';
+
+block content
+  h1 UI-KIT
+  include ../ui-kit/index.pug

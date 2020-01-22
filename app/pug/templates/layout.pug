@@ -1,0 +1,17 @@
+extends default.pug
+
+block body
+  body.page(class=bodyClass)
+    .page__inner
+      header.page__header
+        block header
+          .page__main-nav
+            +mainNav()
+      main.page__main
+        block content
+      footer.page__footer
+        block footer
+          include ../../blocks/footer/footer.pug
+    
+    block script
+      script(src=paths.mainJsBundle)

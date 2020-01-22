@@ -1,0 +1,68 @@
+.socbtn {
+  $color: black;
+  $color-fb: #3A559F;
+  $color-vk: #44678D;
+  $color-google: #FFFFFF;
+  $text-color-white: #FFFFFF;
+  $text-color-gray: #6F6F6F;
+  $border-radius: 11px;
+  $facebook-icon: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8.651v-7.726H8.047V9.121h2.604V6.472a3.488 3.488 0 0 1 3.488-3.488h2.722V5.82h-1.948c-.612 0-1.108.496-1.108 1.108v2.193h3.007l-.416 3.153h-2.591V20H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z' fill='%23fff'/%3E%3C/svg%3E";
+  $vk-icon: "data:image/svg+xml,%3Csvg width='37' height='20' viewBox='0 0 37 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.316 2.564c.995 2.25 2.257 4.37 3.918 6.273.22.254.498.479.79.662.428.269.831.174 1.005-.273.184-.47.353-1.42.363-1.914.027-1.288-.005-2.132-.08-3.419-.05-.824-.37-1.547-1.694-1.765-.409-.068-.447-.376-.184-.684.547-.64 1.31-.741 2.136-.782 1.34-.066 2.684-.012 4.025 0a8.73 8.73 0 0 1 1.634.152c.702.14 1.078.59 1.193 1.218.06.323.09.655.082.983-.035 1.406-.109 2.81-.126 4.216a6.746 6.746 0 0 0 .166 1.654c.18.749.737.937 1.307.396.723-.687 1.36-1.46 1.96-2.245 1.087-1.428 1.9-2.996 2.599-4.612.361-.833.638-1.015 1.619-1.017 1.842-.004 3.685-.005 5.527 0 .327.002.669.03.977.12.501.146.7.52.582.993-.273 1.111-.93 2.055-1.632 2.963-1.127 1.456-2.309 2.878-3.463 4.317a5.383 5.383 0 0 0-.397.577c-.432.714-.402 1.114.227 1.708 1.002.946 2.075 1.83 3.045 2.802a16.78 16.78 0 0 1 1.917 2.281c.707 1.021.27 1.983-1.05 2.154-.83.108-4.888.001-5.098 0-1.09-.004-2.047-.35-2.817-1.028-.857-.755-1.635-1.583-2.457-2.37a6.692 6.692 0 0 0-.798-.664c-.672-.47-1.333-.365-1.647.358-.268.62-.5 2.251-.511 2.39-.057.728-.563 1.193-1.455 1.237-2.573.128-5.067-.134-7.39-1.273-1.969-.965-3.541-2.33-4.903-3.92-2.164-2.527-3.873-5.304-5.433-8.163C2.173 5.742.593 2.666.551 2.52.409 2.034.54 1.57.99 1.41c.28-.1 5.49 0 5.576.004.832.04 1.399.362 1.749 1.151z' fill='%23fff'/%3E%3C/svg%3E";
+  $google-icon: "data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M4.36 10.877l-.646 2.34-2.36.048A8.747 8.747 0 0 1 .246 9c0-1.493.375-2.9 1.038-4.14l2.102.375.92 2.026a5.205 5.205 0 0 0 .053 3.616z' fill='%23FBBB00'/%3E%3Cpath d='M18.642 7.319a8.754 8.754 0 0 1-.04 3.56c-.452 2.063-1.632 3.865-3.267 5.14l-2.648-.132-.375-2.269a5.41 5.41 0 0 0 2.38-2.739H9.73V7.32H18.642z' fill='%23518EF8'/%3E%3Cpath d='M15.334 16.018A9.419 9.419 0 0 1 9.527 18c-3.534 0-6.606-1.916-8.173-4.735l3.007-2.388c.784 2.029 2.8 3.473 5.166 3.473a5.616 5.616 0 0 0 2.786-.732l3.022 2.4z' fill='%2328B446'/%3E%3Cpath d='M15.448 2.072l-3.006 2.387a5.61 5.61 0 0 0-2.916-.81c-2.419 0-4.474 1.511-5.218 3.612l-3.023-2.4C2.829 1.973 5.94 0 9.525 0c2.252 0 4.316.778 5.923 2.072z' fill='%23F14336'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Cpath fill='%23fff' transform='translate(.247)' d='M0 0h18.557v18H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E";
+  
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 1em;
+  color: $text-color-white;
+  background: $color;
+  text-decoration: none;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  &--has-left-icon {
+    position: relative;
+    padding-left: 35px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translateY(-50%);
+    }
+  }
+  
+  &--fb {
+    background: $color-fb;
+    &::before {
+      background-image: url($facebook-icon);
+    }
+  }
+  
+  &--vk {
+    background: $color-vk;
+    &::before {
+      background-image: url($vk-icon);
+    }
+  }
+  
+  &--google {
+    color: $text-color-gray;
+    background: $color-google;
+    border: 1px solid;
+
+    &::before {
+      background-image: url($google-icon);
+    }
+  }
+}

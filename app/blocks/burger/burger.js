@@ -1,5 +1,5 @@
-const Burger = () => {
-  const burgerElement = document.querySelector('[data-js="burger"]');
+const burger = () => {
+  const burgerElement = document.querySelector('.js-burger');
 
   if (burgerElement) {
     burgerElement.addEventListener('click', (e) => {
@@ -9,4 +9,4 @@ const Burger = () => {
   }
 };
 
-export default Burger;
+export default burger;

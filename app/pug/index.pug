@@ -1,16 +1,12 @@
-extends templates/default.pug
+extends templates/layout.pug
 
 block head
   - var path = '';
   - var pageTitle = 'Главная страница';
   - var pageDescription = 'Описание главной страницы';
 
+prepend body
+  - var bodyClass = '';
+
 block content
-  body.page
-    .page__inner.content-container
-      header.page__main-nav
-        +mainNav()
-      main.page__content
-        h1 Главная страница
-      footer.page__footer
-        include ../blocks/footer/footer.pug
+  h1 Главная страница

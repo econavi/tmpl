@@ -11,11 +11,6 @@ head
   meta(name='cleartype' content='on')
   meta(name='HandheldFriendly' content='True')
 
-  //- HTML5 Shiv
-  <!--[if lt IE 9]>
-  script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js")
-  <![endif]-->
-
   meta(name='apple-mobile-web-app-capable' content='yes')
   meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
 
@@ -35,4 +30,5 @@ head
   meta(name="msapplication-config" content="/assets/img/favicons/browserconfig.xml")
   meta(name="theme-color" content="#ffffff")
 
-  link(href="/styles/build.min.css" rel="stylesheet")
+  block styles
+    link(href="/styles/build.min.css" rel="stylesheet")

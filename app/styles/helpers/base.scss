@@ -13,13 +13,13 @@ body {
   padding: 0;
   margin: 0;
 
+  @include smooth-scroll();
+  @include text-size-adjust(none);
   @include fontFamily($font-default);
   @include fontSizeDefault();
   font-weight: 400;
-  line-height: $default-line-height;
+  line-height: $line-height-default;
 
-  @include smooth-scroll();
-  @include text-size-adjust(none);
 }
 
 img {
@@ -28,11 +28,11 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  @include fontFamily($font-second);
   margin-top: 0;
   margin-bottom: 0.52em; 
-  @include fontFamily($font-second); 
   font-weight: 700;
-  line-height: $headers-default-line-height;
+  line-height: $line-height-headers-default;
 }
 
 p {
@@ -89,8 +89,8 @@ table {
 
 table td,
 table th {
-  padding: 10px;
-  padding-right: 30px;
+  padding: 1em;
+  padding-right: 2em;
 }
 
 a {
@@ -103,4 +103,8 @@ button,
 select {
   @include hoverDefault();
   @include activeDefault();
+}
+
+a, label {
+	-webkit-tap-highlight-color: transparent;
 }
