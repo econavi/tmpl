@@ -1,6 +1,7 @@
 body.menu-opend {
   position: fixed;
   overflow: hidden;
+  width: 100%;
 }
 
 .main-nav {
@@ -23,6 +24,7 @@ body.menu-opend {
   &__logo {
     width: 50px;
     margin-right: 2em;
+    line-height: 0;
   }
 
   &__menu {

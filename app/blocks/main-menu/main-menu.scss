@@ -27,7 +27,6 @@
     color: $text-color-gray;
     white-space: nowrap;
 
-    @include fontFamily($font-third);
     font-weight: 900;
     font-size: $link-font-size;
     line-height: 1.2;

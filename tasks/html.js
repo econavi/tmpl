@@ -9,7 +9,7 @@ const gulpIf = require('gulp-if');
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 module.exports = () => (
-  gulp.src('app/pug/**/*.pug')
+  gulp.src('app/pug/*.pug')
   .pipe(plumber({
     errorHandler: notify.onError(function(err) {
       return {
