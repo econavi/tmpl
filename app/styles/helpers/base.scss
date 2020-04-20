@@ -42,6 +42,7 @@ p {
 input {
   overflow: visible;    // Покажем торчащее в Edge
   text-transform: none; // Уберём наследование text transform в Firefox
+  -webkit-border-radius: 0px;
   
   &::-ms-clear { // убить кресты на инпутах в IE
     display: none;
@@ -106,4 +107,8 @@ select {
 
 a, label {
 	-webkit-tap-highlight-color: transparent;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), textarea {
+  -webkit-appearance: none;
 }
