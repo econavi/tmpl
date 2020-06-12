@@ -43,7 +43,8 @@ p {
 input {
   overflow: visible;    // Покажем торчащее в Edge
   text-transform: none; // Уберём наследование text transform в Firefox
-  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  opacity: 1; // fix on ios
   
   &::-ms-clear { // убить кресты на инпутах в IE
     display: none;
