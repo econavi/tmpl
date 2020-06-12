@@ -1,9 +1,8 @@
 // ------------------------------------------------------
 // COMMON
-$page-width: 1440px;
-$page-margins-x: 161px;
-$content-padding-x: 15px;
-$content-max-width: $page-width - ($page-margins-x * 2);
+$content-width: 1114px;
+$content-padding-x: 16px;
+$content-container: $content-width + ($content-padding-x * 2);
 $grid-gutter-default: 3.8%;
 
 // ------------------------------------------------------
@@ -51,9 +50,11 @@ $shdow-default: 0px 1px 4px rgba(0, 0, 0, 0.15);
 
 // ------------------------------------------------------
 // FONTS
-$font-default: 'Montserrat';
-$font-second: 'Montserrat';
-$font-third: 'Montserrat';
+$font-family-1: 'Montserrat';
+$font-family-2: 'Montserrat';
+
+$font-family-default: $font-family-1;
+$font-family-headers: $font-family-2;
 
 // fonts-size
 $font-size-xxxs: 12px;
@@ -79,16 +80,24 @@ $line-height-headers-default: 1.4;
 // FORM
 $placeholder-font-size: $font-size-xs;
 
+// ------------------------------------------------------
+// Spaces
+$space100: 8px;
+$space200: 16px;
+$space300: 24px;
+$space400: 32px;
+$space500: 40px;
+$space600: 56px;
+$space700: 72px;
 
 // ------------------------------------------------------
 // MEDIA QUERIES
-$phone:      320px;
-$smartphone: 400px;
-$tablet:     768px;
-$laptop:     1024px;
-$desktop:    1280px;
-$tv:         1440px;
+$phone:            320px;
+$smartphone:       400px;
+$tablet:           768px;
+$tablet-landscape: 1024px;
+$laptop:           1280px;
+$desktop:          1440px;
+$tv:               1600px;
 
 $mobile-menu: $tablet;
-
-

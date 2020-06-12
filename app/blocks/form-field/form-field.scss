@@ -1,0 +1,133 @@
+.form-field {
+  position: relative;
+  height: 76px;
+  padding-top: $space-xs;
+
+  &__field {
+    @include fontSize(font300);
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: $space-xxxs;
+    padding-bottom: 10px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $color-overlay-p2_300;
+    color: $color-primary2-high;
+
+    &.edd-root { // .edd-root — select element
+      z-index: auto;
+    }
+    
+    &.edd-root-open:hover {
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__label {
+    @include fontSize(font300);
+    position: absolute;
+    top: 13px;
+    left: 1px;
+    padding: 0;
+    margin: 0;
+    transition: $transition-default;
+    color: $color-primary2-medium;
+    cursor: default;
+  }
+
+  &__subtext {
+    @include fontSize(font100);
+    display: block;
+    width: 100%;
+    color: $color-primary2-low;
+  }
+}
+
+// Hover
+.form-field__field:hover {
+  border-bottom: 1px solid $color-overlay-p2_400;
+}
+
+// Focus
+.form-field__field:focus ~ .form-field__label,
+.form-field.is-filled .form-field__label,
+.edd-root-focused ~ .form-field__label, // edd-root is select field
+.edd-root-has-value ~ .form-field__label {
+  top: 0;
+  left: 0;
+  color: $color-primary2-medium;
+  @include fontSize(font100);
+}
+
+.form-field__field:focus {
+  border-bottom: 2px solid $color-primary2-high;
+}
+
+// Is-Error
+.form-field.is-error .form-field__field {
+  border-bottom: 2px solid $color-alerts-error;
+}
+
+.form-field.is-error .form-field__subtext {
+  color: $color-alerts-error;
+}
+
+// Disabled
+.form-field__field:disabled {
+  border-bottom: 1px solid $color-overlay-p2_200;
+}
+
+.form-field__field:disabled ~ .form-field__label {
+  color:  $color-primary2-low;
+}
+
+// =========================================
+// Big text
+// =========================================
+
+.form-field_big-text {
+  height: 76px;
+  
+  .form-field__field,
+  .form-field__label {
+    @include fontFamily2($font-family-default-2);
+    font-size: 36px;
+  }
+
+  .form-field__label {
+    top: 24px;
+  }
+
+  .form-field__field {
+    padding-bottom: 8px;
+  }
+}
+
+// Focus
+.form-field_big-text .form-field__field:focus ~ .form-field__label,
+.form-field_big-text.is-filled .form-field__label {
+  display: none;
+}
+
+
+// =========================================
+// Icons
+// =========================================
+.form-field_icon-right .form-field__field {
+  padding-right: 24px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 24px 24px;
+}
+
+// icon-type lock
+.form-field_icon-type_lock .form-field__field {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z' fill='%23000' fill-opacity='.64'/%3E%3C/svg%3E");
+}
+
+// icon-type lock disabled
+.form-field_icon-type_lock .form-field__field:disabled {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z' fill='%23000' fill-opacity='.4'/%3E%3C/svg%3E");
+}

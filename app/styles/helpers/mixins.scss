@@ -12,6 +12,24 @@
   }
 }
 
+@mixin hoverDefault() {
+  &:hover {
+    @include media-not-touch() {
+      opacity: $opacity-hover-default;
+      @content;
+    }
+  }
+};
+
+@mixin activeDefault() {
+  &:active {
+    @include media-not-touch() {
+      opacity: $opacity-active-default;
+      @content;
+    }
+  }
+};
+
 // доступно скрыть элемент
 @mixin visualli-hidden() {
   position: absolute;
