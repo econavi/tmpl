@@ -1,116 +1,77 @@
 .form-field {
   position: relative;
   height: 76px;
-  padding-top: $space-xs;
+  padding-top: 12px;
 
   &__field {
-    @include fontSize(font300);
     position: relative;
     z-index: 1;
     display: block;
     width: 100%;
-    margin-bottom: $space-xxxs;
+    margin-bottom: 4px;
     padding-bottom: 10px;
+    font-size: 16px;
     background: none;
     border: none;
-    border-bottom: 1px solid $color-overlay-p2_300;
-    color: $color-primary2-high;
-
-    &.edd-root { // .edd-root — select element
-      z-index: auto;
-    }
-    
-    &.edd-root-open:hover {
-      border-bottom-color: transparent;
-    }
+    border-bottom: 1px solid rgba(#000000, 0.12);
+    color: rgba(#000000, 0.88);
   }
 
   &__label {
-    @include fontSize(font300);
     position: absolute;
     top: 13px;
     left: 1px;
     padding: 0;
     margin: 0;
+    font-size: 16px;
     transition: $transition-default;
-    color: $color-primary2-medium;
+    color: rgba(#000000, 0.64);
     cursor: default;
   }
 
   &__subtext {
-    @include fontSize(font100);
     display: block;
     width: 100%;
-    color: $color-primary2-low;
+    font-size: 12px;
+    color: rgba(#000000, 0.4);
   }
 }
 
 // Hover
 .form-field__field:hover {
-  border-bottom: 1px solid $color-overlay-p2_400;
+  border-bottom: 1px solid rgba(#000000, 0.24);
 }
 
 // Focus
 .form-field__field:focus ~ .form-field__label,
-.form-field.is-filled .form-field__label,
-.edd-root-focused ~ .form-field__label, // edd-root is select field
-.edd-root-has-value ~ .form-field__label {
+.form-field.is-filled .form-field__label {
   top: 0;
   left: 0;
-  color: $color-primary2-medium;
-  @include fontSize(font100);
+  font-size: 12px;
+  color: rgba(#000000, 0.64);
 }
 
 .form-field__field:focus {
-  border-bottom: 2px solid $color-primary2-high;
+  border-bottom: 2px solid rgba(#000000, 0.88);
 }
 
 // Is-Error
 .form-field.is-error .form-field__field {
-  border-bottom: 2px solid $color-alerts-error;
+  border-bottom: 2px solid #A33327;
 }
 
 .form-field.is-error .form-field__subtext {
-  color: $color-alerts-error;
+  color: #A33327;
 }
 
 // Disabled
 .form-field__field:disabled {
-  border-bottom: 1px solid $color-overlay-p2_200;
+  border-bottom: 1px solid rgba(#000000, 0.08);
 }
 
 .form-field__field:disabled ~ .form-field__label {
-  color:  $color-primary2-low;
+  color:  rgba(#000000, 0.04);
 }
-
-// =========================================
-// Big text
-// =========================================
-
-.form-field_big-text {
-  height: 76px;
-  
-  .form-field__field,
-  .form-field__label {
-    @include fontFamily2($font-family-default-2);
-    font-size: 36px;
-  }
-
-  .form-field__label {
-    top: 24px;
-  }
-
-  .form-field__field {
-    padding-bottom: 8px;
-  }
-}
-
-// Focus
-.form-field_big-text .form-field__field:focus ~ .form-field__label,
-.form-field_big-text.is-filled .form-field__label {
-  display: none;
-}
-
 
 // =========================================
 // Icons
