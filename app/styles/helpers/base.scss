@@ -15,7 +15,7 @@ body {
 
   @include smooth-scroll();
   @include text-size-adjust(none);
-  @include fontFamily($font-default);
+  font-family: $font-family-default;
   @include fontSizeDefault();
   font-weight: 400;
   line-height: $line-height-default;

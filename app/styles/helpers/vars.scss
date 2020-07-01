@@ -1,5 +1,6 @@
 // ------------------------------------------------------
 // COMMON
+$page-width: 1450px;
 $content-width: 1114px;
 $content-padding-x: 16px;
 $content-container: $content-width + ($content-padding-x * 2);
@@ -50,8 +51,8 @@ $shdow-default: 0px 1px 4px rgba(0, 0, 0, 0.15);
 
 // ------------------------------------------------------
 // FONTS
-$font-family-1: 'Montserrat';
-$font-family-2: 'Montserrat';
+$font-family-1: Montserrat, sans-serif;
+$font-family-2: Montserrat, sans-serif;
 
 $font-family-default: $font-family-1;
 $font-family-headers: $font-family-2;

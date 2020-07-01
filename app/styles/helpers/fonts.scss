@@ -26,11 +26,6 @@
 //   }
 // }
 
-// Миксин для назначения
-@mixin fontFamily($name) {
-  font-family: '#{$name}', sans-serif;
-}
-
 // Подключение шрифтов
 @include fontFace('montserrat', 'montserrat-regular', 400);
 @include fontFace('montserrat', 'montserrat-italic', 400, italic);
