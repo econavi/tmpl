@@ -10,7 +10,7 @@
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "debuga": "^1.0.2",
     "del": "^5.1.0",
     "eslint": "^6.5.1",
